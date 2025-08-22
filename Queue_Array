@@ -14,29 +14,29 @@ class Queue:
 
     def enqueue(self, car):
         if self.is_full():
-            print("Queue is full. Cannot add more cars.")
+            print("🚫 Queue is full. Cannot add more cars.")
             return
         self.rear = (self.rear + 1) % self.capacity
         self.queue[self.rear] = car
         self.size += 1
-        print(f"Car '{car}' added to the queue.")
+        print(f"✅ Car '{car}' added to the queue.")
 
     def dequeue(self):
         if self.is_empty():
-            print("Queue is empty. No car to remove.")
+            print("🚫 Queue is empty. No car to remove.")
             return None
         car = self.queue[self.front]
         self.queue[self.front] = None
         self.front = (self.front + 1) % self.capacity
         self.size -= 1
-        print(f"Car '{car}' removed from the queue.")
+        print(f"🚗 Car '{car}' removed from the queue.")
         return car
 
     def display_queue(self):
         if self.is_empty():
-            print("Queue is empty.")
+            print("🚫 Queue is empty.")
             return
-        print("Current Queue of Cars:")
+        print("🚘 Current Queue of Cars:")
         for i in range(self.size):
             index = (self.front + i) % self.capacity
             print(f"- {self.queue[index]}")
@@ -60,7 +60,11 @@ while True:
     elif choice == "3":
         parking_queue.display_queue()
     elif choice == "4":
-        print("Exiting system...")
+        print("👋 Exiting system...")
         break
     else:
-        print("Invalid choice! Please try ag
+        print("❌ Invalid choice! Please try again.")
+
+
+
+        
